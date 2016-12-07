@@ -1,0 +1,62 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/acsellers/inflections",
+			"repository": "https://github.com/acsellers/inflections",
+			"revision": "cb98bfe9e3ee28e8649778f5fbb2e95f54f71b39",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/coreos/go-semver/semver",
+			"repository": "https://github.com/coreos/go-semver",
+			"revision": "v0.2.0",
+			"branch": "master",
+			"path": "/semver",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/fatih/color",
+			"repository": "https://github.com/fatih/color",
+			"revision": "v1.1.0",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/mattn/go-colorable",
+			"repository": "https://github.com/mattn/go-colorable",
+			"revision": "v0.0.6",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/mattn/go-isatty",
+			"repository": "https://github.com/mattn/go-isatty",
+			"revision": "v0.0.1",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/urfave/cli",
+			"repository": "https://github.com/urfave/cli",
+			"revision": "v1.19.1",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/visionmedia/go-debug",
+			"repository": "https://github.com/visionmedia/go-debug",
+			"revision": "v2.0.0",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "gopkg.in/yaml.v2",
+			"repository": "https://gopkg.in/yaml.v2",
+			"revision": "a83829b6f1293c91addabc89d0571c246397bbf4",
+			"branch": "v2",
+			"notests": true
+		}
+	]
+}

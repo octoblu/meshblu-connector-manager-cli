@@ -22,3 +22,8 @@ _testmain.go
 *.exe
 *.test
 *.prof
+meshblu-connector-manager-cli
+entrypoint/meshblu-connector-manager-cli
+go-meshblu-connector-manager-cli
+entrypoint/go-meshblu-connector-manager-cli
+dist

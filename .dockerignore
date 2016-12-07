@@ -1,0 +1,8 @@
+.git
+meshblu-connector-manager-cli
+entrypoint/meshblu-connector-manager-cli
+go-meshblu-connector-manager-cli
+entrypoint/go-meshblu-connector-manager-cli
+build.sh
+cross-compile.sh
+README.md
