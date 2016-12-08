@@ -4,6 +4,7 @@
 		{
 			"importpath": "github.com/acsellers/inflections",
 			"repository": "https://github.com/acsellers/inflections",
+			"vcs": "",
 			"revision": "cb98bfe9e3ee28e8649778f5fbb2e95f54f71b39",
 			"branch": "master",
 			"notests": true
@@ -11,6 +12,7 @@
 		{
 			"importpath": "github.com/coreos/go-semver/semver",
 			"repository": "https://github.com/coreos/go-semver",
+			"vcs": "",
 			"revision": "v0.2.0",
 			"branch": "master",
 			"path": "/semver",
@@ -19,6 +21,7 @@
 		{
 			"importpath": "github.com/fatih/color",
 			"repository": "https://github.com/fatih/color",
+			"vcs": "",
 			"revision": "v1.1.0",
 			"branch": "master",
 			"notests": true
@@ -26,6 +29,7 @@
 		{
 			"importpath": "github.com/mattn/go-colorable",
 			"repository": "https://github.com/mattn/go-colorable",
+			"vcs": "",
 			"revision": "v0.0.6",
 			"branch": "master",
 			"notests": true
@@ -33,13 +37,23 @@
 		{
 			"importpath": "github.com/mattn/go-isatty",
 			"repository": "https://github.com/mattn/go-isatty",
+			"vcs": "",
 			"revision": "v0.0.1",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/octoblu/go-meshblu-connector-service",
+			"repository": "https://github.com/octoblu/go-meshblu-connector-service",
+			"vcs": "git",
+			"revision": "be5fa6c384294f4a852c53ce4159f47d8f7d7986",
 			"branch": "master",
 			"notests": true
 		},
 		{
 			"importpath": "github.com/urfave/cli",
 			"repository": "https://github.com/urfave/cli",
+			"vcs": "",
 			"revision": "v1.19.1",
 			"branch": "master",
 			"notests": true
@@ -47,6 +61,7 @@
 		{
 			"importpath": "github.com/visionmedia/go-debug",
 			"repository": "https://github.com/visionmedia/go-debug",
+			"vcs": "",
 			"revision": "v2.0.0",
 			"branch": "master",
 			"notests": true
@@ -54,6 +69,7 @@
 		{
 			"importpath": "gopkg.in/yaml.v2",
 			"repository": "https://gopkg.in/yaml.v2",
+			"vcs": "",
 			"revision": "a83829b6f1293c91addabc89d0571c246397bbf4",
 			"branch": "v2",
 			"notests": true

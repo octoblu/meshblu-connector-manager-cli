@@ -4,13 +4,10 @@ import (
 	"fmt"
 	"log"
 	"os"
-	"os/signal"
-	"syscall"
-	"time"
 
-	"github.com/urfave/cli"
 	"github.com/coreos/go-semver/semver"
-	"github.com/fatih/color"
+	"github.com/octoblu/meshblu-connector-manager-cli/userlogin"
+	"github.com/urfave/cli"
 	De "github.com/visionmedia/go-debug"
 )
 
@@ -20,55 +17,54 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "meshblu-connector-manager-cli"
 	app.Version = version()
-	app.Action = run
-	app.Flags = []cli.Flag{
-		cli.StringFlag{
-			Name:   "example, e",
-			EnvVar: "MESHBLU_CONNECTOR_MANAGER_CLI_EXAMPLE",
-			Usage:  "Example string flag",
+	app.Flags = []cli.Flag{}
+	app.Commands = []cli.Command{
+		{
+			Name:    "user-login",
+			Aliases: []string{"ul"},
+			Usage:   "manage connectors installed as a UserLogin service (windows only)",
+			Subcommands: []cli.Command{
+				{
+					Name:    "list",
+					Aliases: []string{"ls"},
+					Usage:   "list out currently installed services",
+					Action:  userlogin.List,
+					Flags: []cli.Flag{
+						cli.StringFlag{
+							Name:   "local-app-data, l",
+							Usage:  "Local AppData directory of the user.",
+							EnvVar: "LOCALAPPDATA",
+						},
+					},
+				},
+				{
+					Name:      "upgrade-ignition",
+					Aliases:   []string{"ui"},
+					Usage:     "upgrades the ignition script for the installed service",
+					ArgsUsage: "<uuid> [<uuid>...]",
+					Action:    userlogin.UpgradeIgnition,
+					Flags: []cli.Flag{
+						cli.StringFlag{
+							Name:   "local-app-data, l",
+							Usage:  "Local AppData directory of the user.",
+							EnvVar: "LOCALAPPDATA",
+						},
+						cli.BoolFlag{
+							Name:   "all, a",
+							Usage:  "Upgrade all installed services. Cannot be used in combination with --uuid",
+							EnvVar: "MESHBLU_CONNECTOR_MANAGER_ALL",
+						},
+						cli.StringFlag{
+							Name:   "version-tag, t",
+							Usage:  "Version to upgrade the ignition script to. (ex: v8.2.0)",
+							EnvVar: "MESHBLU_CONNECTOR_MANAGER_UUID",
+						},
+					},
+				},
+			},
 		},
 	}
 	app.Run(os.Args)
-}
-
-func run(context *cli.Context) {
-	example := getOpts(context)
-
-	sigTerm := make(chan os.Signal)
-	signal.Notify(sigTerm, syscall.SIGTERM)
-
-	sigTermReceived := false
-
-	go func() {
-		<-sigTerm
-		fmt.Println("SIGTERM received, waiting to exit")
-		sigTermReceived = true
-	}()
-
-	for {
-		if sigTermReceived {
-			fmt.Println("I'll be back.")
-			os.Exit(0)
-		}
-
-		debug("meshblu-connector-manager-cli.loop: %v", example)
-		time.Sleep(1 * time.Second)
-	}
-}
-
-func getOpts(context *cli.Context) string {
-	example := context.String("example")
-
-	if example == "" {
-		cli.ShowAppHelp(context)
-
-		if example == "" {
-			color.Red("  Missing required flag --example or MESHBLU_CONNECTOR_MANAGER_CLI_EXAMPLE")
-		}
-		os.Exit(1)
-	}
-
-	return example
 }
 
 func version() string {
